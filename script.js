@@ -1,179 +1,8 @@
-// Sample data - in a real app, this would come from an API
-const artists = [
-  { id: 1, name: "Linkin Park", image: "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80" },
-  { id: 2, name: "Electronic Vibes", image: "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" },
-  { id: 3, name: "Chill Masters", image: "https://images.unsplash.com/photo-1511379938547-c1f69419868d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" },
-  { id: 4, name: "Urban Beats", image: "https://images.unsplash.com/photo-1501386761578-eac5c94b800a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" },
-  { id: 5, name: "Jazz Collective", image: "https://images.unsplash.com/photo-1415201364774-f6f0bb35f28f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" }
-];
-
-const albums = [
-  {
-    id: 1,
-    title: "Neon Nights",
-    artist: "Electronic Vibes",
-    cover: "https://images.unsplash.com/photo-1614149162883-504ce4d13909?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80"
-  },
-  {
-    id: 2,
-    title: "Midnight Lounge",
-    artist: "Chill Masters",
-    cover: "https://images.unsplash.com/photo-1504898770365-14faca6a7320?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1167&q=80"
-  },
-  {
-    id: 3,
-    title: "City Rhythms",
-    artist: "Urban Beats",
-    cover: "https://images.unsplash.com/photo-1501386761578-eac5c94b800a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
-  },
-  {
-    id: 4,
-    title: "Blue Notes",
-    artist: "Jazz Collective",
-    cover: "https://images.unsplash.com/photo-1415201364774-f6f0bb35f28f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
-  },
-  {
-    id: 5,
-    title: "Acoustic Dreams",
-    artist: "Indie Folk",
-    cover: "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
-  },
-  {
-    id: 6,
-    title: "Digital Waves",
-    artist: "Electronic Vibes",
-    cover: "https://images.unsplash.com/photo-1459749411175-04bf5292ceea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
-  }
-];
-
-const songs = [
-  {
-    id: 1,
-    title: "Say Yes to Heaven",
-    artist: "Linkin Park",
-    album: "Hybrid Theory",
-    albumId: 1,
-    cover: "https://images.unsplash.com/photo-1614149162883-504ce4d13909?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80",
-    duration: 405,
-    url: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3",
-    listens: 93554,
-    tag: "Choice",
-    lyrics: "In this farewell\nThere's no blood, there's no alibi\n'Cause I've drawn regret\nFrom the truth of a thousand lies\nSo let mercy come and wash away\nWhat I've done..."
-  },
-  {
-    id: 2,
-    title: "Thinking of You",
-    artist: "Linkin Park",
-    album: "Meteora",
-    albumId: 2,
-    cover: "https://images.unsplash.com/photo-1504898770365-14faca6a7320?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1167&q=80",
-    duration: 177,
-    url: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3",
-    listens: 40364,
-    tag: "Abdomen",
-    lyrics: "I've put my trust in you\nPushed as far as I can go\nFor all this\nThere's only one thing you should know\nI tried so hard and got so far\nBut in the end, it doesn't even matter..."
-  },
-  {
-    id: 3,
-    title: "Only Girl (In the World)",
-    artist: "Linkin Park",
-    album: "Minutes to Midnight",
-    albumId: 3,
-    cover: "https://images.unsplash.com/photo-1501386761578-eac5c94b800a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
-    duration: 80,
-    url: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3",
-    listens: 10364,
-    tag: "Desire",
-    lyrics: "I've become so numb, I can't feel you there\nBecome so tired, so much more aware\nI'm becoming this, all I want to do\nIs be more like me and be less like you..."
-  },
-  {
-    id: 4,
-    title: "The Conspire of the Bird",
-    artist: "Linkin Park",
-    album: "A Thousand Suns",
-    albumId: 4,
-    cover: "https://images.unsplash.com/photo-1415201364774-f6f0bb35f28f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
-    duration: 135,
-    url: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-4.mp3",
-    listens: 73547,
-    tag: "Inspired",
-    lyrics: "I'm tired of being what you want me to be\nFeeling so faithless, lost under the surface\nDon't know what you're expecting of me\nPut under the pressure of walking in your shoes..."
-  },
-  {
-    id: 5,
-    title: "Mountain Echo",
-    artist: "Linkin Park",
-    album: "Living Things",
-    albumId: 5,
-    cover: "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
-    duration: 187,
-    url: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-5.mp3",
-    listens: 45678,
-    tag: "Nature",
-    lyrics: "When my time comes\nForget the wrong that I've done\nHelp me leave behind some\nReasons to be missed..."
-  },
-  {
-    id: 6,
-    title: "Synthwave",
-    artist: "Linkin Park",
-    album: "The Hunting Party",
-    albumId: 6,
-    cover: "https://images.unsplash.com/photo-1459749411175-04bf5292ceea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
-    duration: 221,
-    url: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-6.mp3",
-    listens: 34567,
-    tag: "Electronic",
-    lyrics: "I'm holding on\nWhy is everything so heavy?\nHolding on\nSo much more than I can carry..."
-  },
-  {
-    id: 7,
-    title: "Lofi Study",
-    artist: "Linkin Park",
-    album: "One More Light",
-    albumId: 2,
-    cover: "https://images.unsplash.com/photo-1504898770365-14faca6a7320?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1167&q=80",
-    duration: 165,
-    url: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-7.mp3",
-    listens: 23456,
-    tag: "Chill",
-    lyrics: "Who cares if one more light goes out?\nIn a sky of a million stars\nIt flickers, flickers\nWho cares when someone's time runs out?\nIf a moment is all we are..."
-  },
-  {
-    id: 8,
-    title: "Jazz Improv",
-    artist: "Linkin Park",
-    album: "Reanimation",
-    albumId: 4,
-    cover: "https://images.unsplash.com/photo-1415201364774-f6f0bb35f28f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
-    duration: 231,
-    url: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-8.mp3",
-    listens: 12345,
-    tag: "Jazz",
-    lyrics: "Crawling in my skin\nThese wounds, they will not heal\nFear is how I fall\nConfusing what is real..."
-  }
-];
-
-// User playlists
-const playlists = [
-  {
-    id: 1,
-    name: "My Favorites",
-    cover: "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80",
-    songs: [1, 3, 5]
-  },
-  {
-    id: 2,
-    name: "Workout Mix",
-    cover: "https://images.unsplash.com/photo-1501386761578-eac5c94b800a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80",
-    songs: [2, 4, 6]
-  },
-  {
-    id: 3,
-    name: "Chill Vibes",
-    cover: "https://images.unsplash.com/photo-1504898770365-14faca6a7320?ixlib=rb-4.0.3&auto=format&fit=crop&w=1167&q=80",
-    songs: [7, 8]
-  }
-];
+// Global variables to store data
+let artists = [];
+let albums = [];
+let songs = [];
+let playlists = [];
 
 // DOM Elements
 const audio = document.getElementById("audio-player");
@@ -186,20 +15,24 @@ const searchInput = document.querySelector(".search-input");
 const playerSongTitle = document.querySelector(".player-song-title");
 const playerArtistName = document.querySelector(".player-artist-name");
 const currentTrackImg = document.getElementById("current-track-img");
+const artistNameEl = document.querySelector(".artist-name");
+const songCountEl = document.querySelector(".song-count");
 
 // State variables
 let currentSongIndex = 0;
-let isPlaying = true;
+let isPlaying = false;
 let isShuffleOn = false;
 let isRepeatOn = false;
 let currentPlaylist = null;
 let isDarkMode = false;
-let queue = [...songs];
+let queue = [];
 let favorites = [];
 let isLyricsOpen = false;
 
 // Initialize the app
-function init() {
+async function init() {
+  await loadData();
+  updateArtistInfo();
   renderSongs();
   setupEventListeners();
   setupAdvancedFeatures();
@@ -207,6 +40,47 @@ function init() {
   // Start with the first song loaded but paused
   loadSong(0);
   updatePlayPauseButton();
+}
+
+// Load data from JSON file
+async function loadData() {
+  try {
+    const response = await fetch('data.json');
+    const data = await response.json();
+    
+    artists = data.artists;
+    albums = data.albums;
+    songs = data.songs;
+    playlists = data.playlists;
+    
+    // Set initial queue to all songs
+    queue = [...songs];
+    
+    console.log('Data loaded successfully');
+  } catch (error) {
+    console.error('Error loading data:', error);
+    
+    // Fallback to hardcoded data if fetch fails
+    alert('Failed to load data. Using demo data instead.');
+  }
+}
+
+// Update artist info in the header
+function updateArtistInfo() {
+  // Default to first artist
+  const featuredArtist = artists[0];
+  
+  if (featuredArtist) {
+    artistNameEl.textContent = featuredArtist.name;
+    songCountEl.innerHTML = `<i class="fas fa-music"></i> ${songs.filter(song => song.artist === featuredArtist.name).length} songs Total`;
+    
+    // Update artist image
+    const artistImageEl = document.querySelector(".artist-image img");
+    if (artistImageEl) {
+      artistImageEl.src = featuredArtist.image;
+      artistImageEl.alt = featuredArtist.name;
+    }
+  }
 }
 
 // Format time (seconds to MM:SS)
@@ -657,6 +531,14 @@ function setupEventListeners() {
   searchInput.addEventListener("input", (e) => {
     filterSongs(e.target.value);
   });
+  
+  // Play all button
+  const playAllBtn = document.querySelector(".btn-play-all");
+  if (playAllBtn) {
+    playAllBtn.addEventListener("click", () => {
+      playSong(0);
+    });
+  }
   
   // Keyboard shortcuts
   document.addEventListener("keydown", (e) => {
